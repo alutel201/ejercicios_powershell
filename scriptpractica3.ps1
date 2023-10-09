@@ -12,7 +12,7 @@ foreach ($dep in $departamentos){
 }
 
 foreach ($emp in $empleados){
-    New-ADUser -Name "$($emp.nombre)" -Path "OU=$($EMP.departamento),OU=Empresa,DC=EMPRESA,DC=LOCAL" -SamAccountName $($emp.nombre) -UserPrincipalName $($emp.nombre) -AccountPassword (ConvertTo-SecureString "aso2023." -AsPlainText -Force) -GivenName $($emp.nombre) -Surname $($emp.apellido) -ChangePasswordAtLogon $false -Enabled $true
+    New-ADUser -Name "$($emp.nombre)" -Path "OU=$($EMP.departamento),OU=Empresa,DC=EMPRESA,DC=LOCAL" -SamAccountName $($emp.nombre) -UserPrincipalName $($emp.nombre) -AccountPassword (ConvertTo-SecureString "aso2023." -AsPlainText -Force) -GivenName $($emp.nombre) -Surname $($emp.apellido) -ChangePasswordAtLogon $true -Enabled $true
     Add-ADGroupMember -Identity $($emp.departamento) -Members $($emp.nombre)
 
 
