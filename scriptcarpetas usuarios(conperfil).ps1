@@ -12,7 +12,7 @@ foreach ($emp in $empleados){
     $acl.SetAccessRule($reglaadmin)
     Set-Acl "C:\Empresa_users2\$nombre" $acl
     if ($emp.departamento -ieq "PERSONAL"){
-        Set-ADUser -Identity "$nombre" -ScriptPath "carpetas$($emp.departamento).bat" -HomeDrive "Z:" -HomeDirectory "\\EMPRESA-DC1\Empresa_users2$\$nombre" -ProfilePath "\\EMPRESA-DC1\Empresa_users2$\$nombre\$nombre"
+        Set-ADUser -Identity "$nombre" -ScriptPath "carpetas$($emp.departamento).bat" -HomeDrive "Z:" -HomeDirectory "\\EMPRESA-DC1\Empresa_users2$\$nombre" -ProfilePath "\\EMPRESA-DC1\Empresa_users2$\$nombre"
     }
     else{
         Set-ADUser -Identity "$nombre" -ScriptPath "carpetas$($emp.departamento).bat" -HomeDrive "Z:" -HomeDirectory "\\EMPRESA-DC1\Empresa_users2$\$nombre"
